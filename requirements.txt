@@ -12,3 +12,4 @@ google-cloud-core
 google-cloud-resource-manager
 google-cloud-storage
 google_cloud_pipeline_components
+tensorflow
