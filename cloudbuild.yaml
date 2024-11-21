@@ -5,9 +5,7 @@ steps:
     args: ["install", "-r", "requirements.txt", "--user"]
 
   - name: 'bash'
-    script:
-    #!/usr/bin/env bash
-    python --version
+    script: python --version
 
   # Cloud Build step to compile pipeline.py
   - name: 'python'
