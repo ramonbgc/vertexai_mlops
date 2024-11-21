@@ -5,31 +5,31 @@ steps:
     args: ["install", "-r", "requirements.txt", "--user"]
 
   # Cloud Build step to compile pipeline.py
-  - name: 'python'
+  - name: 'python:3.11'
     entrypoint: 'python'
     args: ['pipeline.py']
     id: 'compile'
 
-  - name: 'python'
+  - name: 'python:3.11'
     entrypoint: 'python'
     args: ['-m', 'unittest', 'discover', '-s', 'tests/']
     id: 'test_pipeline'
     waitFor: ['compile']
 
-  - name: 'python'
+  - name: 'python:3.11'
     id: 'test'
     entrypoint: 'python'
     env: ['BUCKET_NAME=${_BUCKET_NAME}', 'EXPERIMENT_NAME=qa-${_EXPERIMENT_NAME}', 'PIPELINE_NAME=${_PIPELINE_NAME}',
           'REGION=${_REGION}', 'ENDPOINT_NAME=qa-${_ENDPOINT_NAME}', 'enable_caching=True','SUBMIT_PIPELINE_SYNC=1']
     args: ['submit-pipeline.py']
 
-  - name: 'python'
+  - name: 'python:3.11'
     id: 'template'
     entrypoint: 'python'
     env: ['REGION=${_REGION}']
     args: ['create-pipeline-template.py']
 
-  - name: 'python'
+  - name: 'python:3.11'
     id: 'prod'
     entrypoint: 'python'
     env: ['BUCKET_NAME=${_BUCKET_NAME}', 'EXPERIMENT_NAME=prod-${_EXPERIMENT_NAME}', 'PIPELINE_NAME=${_PIPELINE_NAME}',
