@@ -35,3 +35,4 @@ steps:
     env: ['BUCKET_NAME=${_BUCKET_NAME}', 'EXPERIMENT_NAME=prod-${_EXPERIMENT_NAME}', 'PIPELINE_NAME=${_PIPELINE_NAME}',
           'REGION=${_REGION}', 'ENDPOINT_NAME=prod-${_ENDPOINT_NAME}', 'enable_caching=False', 'SUBMIT_PIPELINE_SYNC=1']
     args: ['submit-pipeline.py']
+logsbucket: 'gs://rgc-cloudbuild-logs'
