@@ -5,9 +5,11 @@ pandas
 numpy
 google-cloud-aiplatform
 google-api-core
+google-apitools
 google-auth
 google-cloud-bigquery
 google-cloud-core
 google-cloud-resource-manager
 google-cloud-storage
 google_cloud_pipeline_components
+tensorflow
