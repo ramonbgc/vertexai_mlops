@@ -1,0 +1,10 @@
+kfp
+pytest
+pytz
+google-cloud-aiplatform
+google-api-core
+google-auth
+google-cloud-bigquery
+google-cloud-core
+google-cloud-resource-manager
+google-cloud-storage
