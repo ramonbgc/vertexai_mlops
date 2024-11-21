@@ -1,6 +1,7 @@
 kfp
 pytest
 pytz
+pandas
 google-cloud-aiplatform
 google-api-core
 google-auth
